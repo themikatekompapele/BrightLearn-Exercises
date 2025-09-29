@@ -33,7 +33,7 @@ case
     when days present between 14 and 20 then 'excellent'
     when days present between 5 and 13 then 'needs improvement'
     when days<=5 then 'poor attendance'
-else no record
+else 'no record'
 from students
 left join attendance
 end AS students.student_id=attendance.student_id;
