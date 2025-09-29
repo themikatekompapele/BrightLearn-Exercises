@@ -1,0 +1,78 @@
+select student_id, student_name, grade,
+from students
+inner join grades
+on students.student_id=grades.student_id;
+
+select emp_id, emp_name, dept_name
+from employees
+left join departments
+on employees_emp_id=departments.emp_id
+
+select product_id, product_name, quantity
+from products
+full outer join sales
+on products.product_id=sales.product_id;
+
+select order_id, customer_id, amount, customer_name
+from order
+full outer join customers
+on orders.customer_id=customers.customers_id
+case
+  when customer_id is not null then 'returning customer'
+  else 'new customer'
+end AS customer type;
+
+select region_id, region_name, SUM(amount) AS total_sales_per_region
+from regions
+left join sales
+on regions.region_id=sales.region_id
+group by region_id, region_names;
+
+select student_id, name, days present
+case 
+    when days present between 14 and 20 then 'excellent'
+    when days present between 5 and 13 then 'needs improvement'
+    when days<=5 then 'poor attendance'
+else no record
+from students
+left join attendance
+end AS students.student_id=attendance.student_id;
+
+select project_id, name, COUNT(task_id) AS task_count
+from projects
+inner join tasks
+on projects.project_id=tasks.project_id
+group by project_id, name, tasks_count;
+
+select cust_id, order_total, return_total
+case 
+    when customer_return is not null then 'returned'
+    else 'no return'
+end AS return_status
+from orders
+full outer join returns
+on orders.cust_id=returns.cust_id
+where order_total>100;
+
+select user_id, name
+COUNT(login_dates) AS login_count
+group by user_id, name
+order by login_count DESC;
+
+select teacher_id, teacher_name, subject_name
+case 
+    when subject_id=1 then 'math'
+    when subject_id=2 then 'science'
+    when subject_id=3 then 'history'
+else 'no subject assigned'
+end AS subject_name
+from teachers
+left join subjects
+on teachers.teacher_id=subjects.teacher_id
+order by teacher_name ASC;
+
+
+
+
+
+
