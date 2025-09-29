@@ -1,0 +1,62 @@
+select*distinct departments
+from students;
+
+
+select department
+      age AS avg_age
+from students;
+
+select department, student_id AS student_count
+from students
+having student_id>1;
+
+select student_id, name, age, department
+from students
+where age between 21 and 23;
+
+select student_id, anme, age, department
+from students
+where department IN('IT' or 'HR') AND age>21;
+
+select department, credits AS total_credits
+from courses
+having total_credits>5;
+
+select course_id, course_name, department, credits
+from courses
+where credits<4;
+
+select course_id, course_name, credits
+from courses
+order by credits DESC;
+
+select max(grade) AS maximum_grade
+from enrolments;
+
+select min(grade) AS minimum_grade
+from enrolments;
+
+select COUNT(enrollemnt) AS enrollent_counts
+from enrollment;
+
+select department, sum(salary) AS total_salary, sum(bonus) AS total_bonus
+from salaries;
+
+select department, avg(salary) AS avg_salary
+from salaries
+having avg_salary>55000;
+
+select employee_id, name, salary, bonus, sum(salary + bonus) AS total_compensation
+from salaries
+having total_compensation>60000;
+
+select department, sum(budget) AS total_budget, avg(budget) AS avg_budget
+from projects
+having ave_budget>70000;
+
+select project_id, project_name, department, budget
+from projects
+where budget is between(50000 and 120000) AND department not(marketing);
+
+
+
