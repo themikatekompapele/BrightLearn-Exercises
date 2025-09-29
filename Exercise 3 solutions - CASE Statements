@@ -1,0 +1,86 @@
+select product_name, price
+case
+    when price>1000 then 'expensive'
+    when price is between 100 and 1000 then 'mid-range'
+    when price<100 then 'budget'
+end AS price_category
+from products;
+
+select customer_name, amount
+case
+    when orders>=1000 then 'high value'
+    when orders are between 500 and 999.99 then 'medium value'
+    when orders<500 then 'low value'
+end AS order_value_category
+from orders;
+
+select emp_name, department, salary
+case
+    when 'IT' and salary>80000 then 'senior IT'
+    when HR and salary>55000 then 'experienced HR'
+    else 'staff'
+end AS position_level
+from employees;
+
+select student_name, score
+case
+    when score>=90 the 'A'
+    when score is between 80 and 89 then 'B'
+    when score is between 70 and 79 then 'C'
+    when score is between 60 and 69 then 'D'
+    when score<60 then 'F'
+end AS grade
+from students;
+
+select delivery_id, delivery_time_minutes
+case
+    when delivery_time_minutes<=30min then 'Fast'
+    when delivery_time_minutes 31 and 60 mins the 'On Time'
+    when delivery_time_minutes 60 min then 'Late'
+end AS perfomance
+From deliveries;
+
+select issue_type, priority
+case
+    when priority=3 then 'high'
+    when priority=2 then 'medium'
+    when priority=1 then 'low'
+end AS priority_level
+from tickets;
+
+select student_id, (days present/total days*100) AS attendance_percentage
+case
+    when attendace percentage>=90% then 'excellent'
+    when attendance percentage between 75% and 89% then 'good'
+    when attendance percentage<75% then 'needs improvement'
+end AS attendance_status
+from attendance;
+
+select product_id, stock_qty
+case
+    when stock_qty=0 then 'out of stock'
+    when stock_qty between 1 and 5 then 'low stock'
+    when stock_qty>=5, then 'in stock'
+end AS stock_status
+from product_inventory;
+
+select subject, enrolled_students
+case
+    when enrolled_students>=25 then 'large'
+    when endrolled_students between 10 and 24 then 'medium'
+    when enrolled_students <10 then'small'
+end AS class_size_category
+from classes;
+
+select payment_id, payment_methos, amount
+case
+     when payment_method=cash and amount>=200 then'eligible for discount'
+     else 'not eligible'
+end AS discount_eligibility
+from payments;
+
+
+
+
+
+
