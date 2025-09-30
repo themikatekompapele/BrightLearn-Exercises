@@ -1,0 +1,61 @@
+select*
+from employees_db;
+
+select distinct department
+from employees_db;
+
+select first_name, last_name, salary
+from employees_db
+order by salary DESC;
+
+select first_name, last_name, salary
+from employees_db
+order by salary DESC
+limit 5;
+
+select first_name, last_name, department
+from employees_db
+where department=('IT');
+
+select first_name, last_name, department, salary
+from employees_db
+where department=('finance') AND salary>55000;
+
+select first_name, last_name, department
+from employees_db
+where department=('HR') OR department=('Marketing');
+
+select first_name, last_name,department
+from employees_db
+where department NOT('IT');
+
+select first_name, last_name, department
+from employees_db
+where department IN('HR','IT','FINANCE');
+
+select first_name, last_name, department, salary, city
+from employees_db
+where department IN('IT') AND salary>50000 AND city IN('New York');
+
+select first_name, last_name, department, salary
+from employees_db
+where department IN('Finance','Marketing') AND salary>52000
+order by salary DESC;
+
+select distinct city
+from employees_db
+where department IN('Finance', 'Marketing');
+
+select first_name, last_name, department, salary, hire_date
+from employees_db
+where department NOT('Finance') AND salary>50000
+order by hire_date ASC;
+
+select first_name, last_name, city, department
+from employees_db
+where city IN('Chicago','Los Angeles') AND department IN('IT','Marketing')
+limit 3;
+
+
+
+
