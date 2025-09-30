@@ -2,8 +2,7 @@ select*distinct departments
 from students;
 
 
-select department
-      age AS avg_age
+select department, age AS avg_age
 from students;
 
 select department, student_id AS student_count
@@ -36,7 +35,7 @@ from enrolments;
 select min(grade) AS minimum_grade
 from enrolments;
 
-select COUNT(enrollemnt) AS enrollent_counts
+select COUNT(enrollment) AS enrollment_counts
 from enrollment;
 
 select department, sum(salary) AS total_salary, sum(bonus) AS total_bonus
