@@ -6,7 +6,7 @@ on students.student_id=grades.student_id;
 select emp_id, emp_name, dept_name
 from employees
 left join departments
-on employees_emp_id=departments.emp_id
+on employees_emp_id=departments.emp_id;
 
 select product_id, product_name, quantity
 from products
