@@ -27,7 +27,7 @@ where department=('HR') OR department=('Marketing');
 
 select first_name, last_name,department
 from employees_db
-where department NOT('IT');
+where department NOT IN('IT');
 
 select first_name, last_name, department
 from employees_db
@@ -48,7 +48,7 @@ where department IN('Finance', 'Marketing');
 
 select first_name, last_name, department, salary, hire_date
 from employees_db
-where department NOT('Finance') AND salary>50000
+where department NOT IN('Finance') AND salary>50000
 order by hire_date ASC;
 
 select first_name, last_name, city, department
