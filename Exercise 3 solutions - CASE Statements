@@ -1,3 +1,4 @@
+--Query to catgorize product price:
 select product_name, price
 case
     when price>1000 then 'expensive'
@@ -6,6 +7,7 @@ case
 end AS price_category
 from products;
 
+--Query to categorize order value:
 select customer_name, amount
 case
     when orders>=1000 then 'high value'
@@ -14,6 +16,7 @@ case
 end AS order_value_category
 from orders;
 
+--Query to categorize employees position level:
 select emp_name, department, salary
 case
     when 'IT' and salary>80000 then 'senior IT'
@@ -22,6 +25,7 @@ case
 end AS position_level
 from employees;
 
+--Query to categorize grade scores:
 select student_name, score
 case
     when score>=90 the 'A'
@@ -32,6 +36,7 @@ case
 end AS grade
 from students;
 
+Query  to categorize delivery time:
 select delivery_id, delivery_time_minutes
 case
     when delivery_time_minutes<=30min then 'Fast'
@@ -40,6 +45,7 @@ case
 end AS perfomance
 From deliveries;
 
+--Query to categorize tech issue priority level:
 select issue_type, priority
 case
     when priority=3 then 'high'
@@ -48,6 +54,7 @@ case
 end AS priority_level
 from tickets;
 
+--Query to categorize attendance status:
 select student_id, (days present/total days*100) AS attendance_percentage
 case
     when attendace percentage>=90% then 'excellent'
@@ -56,6 +63,7 @@ case
 end AS attendance_status
 from attendance;
 
+--Query to categorize inventory/stock levels:
 select product_id, stock_qty
 case
     when stock_qty=0 then 'out of stock'
@@ -64,6 +72,7 @@ case
 end AS stock_status
 from product_inventory;
 
+--Query to categorize class size
 select subject, enrolled_students
 case
     when enrolled_students>=25 then 'large'
@@ -72,6 +81,7 @@ case
 end AS class_size_category
 from classes;
 
+--Query to categorize discount eligibility of clients
 select payment_id, payment_methos, amount
 case
      when payment_method=cash and amount>=200 then'eligible for discount'
