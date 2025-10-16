@@ -1,12 +1,23 @@
--------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 --Query 1: List all orders along with the customer name and product name.
-SELECT * FROM customers
+SELECT c.customername,o.orderid,o.orderdate,o.quantity,p.productname
+FROM customers AS c
+INNER JOIN orders AS o
+ON c.customerid=o.customerid
+INNER JOIN products AS p
+ON o.productid=p.productid;
+-------------------------------------------------------------------------------------------------------------
+--Query 2: list of customers who ordered more at least one order
+SELECT*FROM customers
 INNER JOIN orders
 ON customers.customerid=orders.customerid
-INNER JOIN products
-ON products.productid=
+WHERE quantity>=1;
 -------------------------------------------------------------------------------------------------------------
-
+--Query 3: List all customers and any orders they might have placed. Include customers who have not placed any orders.
+SELECT *FROM customers
+LEFT JOIN orders
+ON customers.customerid=orders.customerid;
+-------------------------------
 --Query 4: list all products and how many times each one was ordered:
 SELECT ORDERS.PRODUCTID,productname,count(orderid) AS total_orders
 FROM orders
